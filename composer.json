@@ -12,7 +12,9 @@
     "homepage": "https://github.com/red-jasmine/payment",
     "keywords": ["Laravel", "Payment"],
     "require": {
-        "red-jasmine/support": "1.0.x-dev"
+        "red-jasmine/support": "1.0.x-dev",
+        "league/omnipay": "^3.2",
+        "liushoukun/omnipay-alipay": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^8.0"

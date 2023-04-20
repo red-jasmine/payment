@@ -6,6 +6,10 @@
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
+## 参考文档
+[微信支付](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_2.shtml)
+[支付宝](https://opendocs.alipay.com/open/028woa?pathHash=dbf247eb&ref=api&scene=common)
+
 ## Installation
 
 Via Composer
