@@ -17,8 +17,8 @@ return new class extends Migration {
 
             // 系统下应用类型
             $table->unsignedBigInteger('app_id')->default(1)->comment('系统内应用ID');
-            $table->string('app_type', 30)->nullable()->comment('应用下类型');
-            $table->unsignedBigInteger('app_order_no')->nullable()->comment('应用单号');
+            $table->unsignedBigInteger('app_order_no')->nullable()->comment('应用订单号');
+            $table->string('app_order_type', 30)->nullable()->comment('应用订单类型');
             $table->string('subject')->nullable()->comment('交易标题');
             $table->string('description')->nullable()->comment('说明');
 
