@@ -11,11 +11,11 @@ class PaymentServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(): void
+    public function boot() : void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'red-jasmine');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'red-jasmine');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+         $this->loadViewsFrom(__DIR__.'/../resources/views', 'red-jasmine.payment');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         // Publishing is only necessary when using the CLI.
@@ -29,13 +29,17 @@ class PaymentServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register(): void
+    public function register() : void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/payment.php', 'payment');
+        $this->mergeConfigFrom(__DIR__ . '/../config/payment.php', 'payment');
 
         // Register the service the package provides.
         $this->app->singleton('payment', function ($app) {
             return new Payment;
+        });
+
+        $this->app->singleton('payment.channel.app', function ($app) {
+            return new PaymentChannelApp;
         });
     }
 
@@ -46,7 +50,7 @@ class PaymentServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['payment'];
+        return [ 'payment' ];
     }
 
     /**
@@ -54,12 +58,12 @@ class PaymentServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function bootForConsole(): void
+    protected function bootForConsole() : void
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/payment.php' => config_path('payment.php'),
-        ], 'payment.config');
+                             __DIR__ . '/../config/payment.php' => config_path('payment.php'),
+                         ], 'payment.config');
 
         // Publishing the views.
         /*$this->publishes([

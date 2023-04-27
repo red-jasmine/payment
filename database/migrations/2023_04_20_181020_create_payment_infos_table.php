@@ -12,10 +12,7 @@ return new class extends Migration {
 
             // 支付用户信息类
 
-            $table->string('payer_open_id')->nullable()->comment('请求地址');
-            $table->string('payer_open_id')->nullable()->comment('请求地址');
-
-
+            $table->string('payer_open_id')->nullable()->comment('买家OPENID');
             $table->string('request_url')->nullable()->comment('请求地址');
             $table->string('return_url')->nullable()->comment('成功重定向地址');
             $table->string('notify_url')->nullable()->comment('业务通知地址');

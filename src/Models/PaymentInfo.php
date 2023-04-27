@@ -12,6 +12,11 @@ class PaymentInfo extends Model
 
     public $incrementing = false;
 
+    protected $casts = [
+        'extends'          => 'array',
+        'pass_back_params' => 'array'
+    ];
+
     public function payment() : BelongsTo
     {
         return $this->belongsTo(Payment::class, 'id', 'id');

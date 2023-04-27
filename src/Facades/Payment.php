@@ -3,7 +3,12 @@
 namespace RedJasmine\Payment\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use RedJasmine\Payment\Contracts\PaymentInterface;
 
+
+/**
+ * @mixin PaymentInterface
+ */
 class Payment extends Facade
 {
     /**

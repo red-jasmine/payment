@@ -2,20 +2,34 @@
 
 namespace RedJasmine\Payment\Contracts;
 
+use RedJasmine\Payment\Models\Payment;
+use RedJasmine\Support\Contracts\UserInterface;
+
 interface PaymentInterface
 {
 
     /**
-     * 创建订单
-     * @return mixed
+     * 查询订单
+     * @param int $id
+     * @return Payment
      */
-    public function create() : mixed;
+    public function find(int $id) :Payment;
+
+    /**
+     * 创建预支付DNA
+     * @param PaymentTradeInterface $paymentTrade
+     * @param UserInterface $owner
+     * @return Payment
+     * @throws Exception
+     */
+    public function prePayment(PaymentTradeInterface $paymentTrade, UserInterface $owner) : Payment;
 
     /**
      * 获取支付方式
-     * @return mixed
+     * @param int $id
+     * @return Payment
      */
-    public function paying() : mixed;
+    public function paying(int $id) : Payment;
 
     /**
      * 支付 选择支付方式
