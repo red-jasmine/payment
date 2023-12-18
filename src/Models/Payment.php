@@ -20,7 +20,7 @@ class Payment extends Model
     {
         return new  UserObjectBuilder([
                                           'type'     => $this->owner_type,
-                                          'uid'      => $this->owner_uid,
+                                          'id'      => $this->owner_id,
                                           'nickname' => $this->owner_nickname
                                       ]);
     }

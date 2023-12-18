@@ -45,7 +45,7 @@ class Payment implements PaymentInterface
         $payment                 = new Models\Payment();
         $payment->id             = Snowflake::getInstance()->nextId();
         $payment->owner_type     = $owner->getUserType();
-        $payment->owner_uid      = $owner->getUID();
+        $payment->owner_id      = $owner->getID();
         $payment->owner_nickname = $owner->getNickname();
 
         $payment->app_id         = $paymentTrade->appid();

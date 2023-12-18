@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('payment_channel_apps', function (Blueprint $table) {
             $table->id()->comment('ID');
             $table->string('owner_type', 20)->comment('所属者类型');
-            $table->string('owner_uid', 64)->comment('所属者UID');
+            $table->string('owner_id', 64)->comment('所属者UID');
             $table->string('owner_nickname', 64)->nullable()->comment('所属者昵称');
             $table->string('channel_type')->nullable()->comment('支付渠道');
             $table->string('channel_merchant_id')->nullable()->comment('渠道商户ID');
